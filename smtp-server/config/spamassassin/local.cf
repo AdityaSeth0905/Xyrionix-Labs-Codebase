@@ -1,0 +1,5 @@
+
+# SpamAssassin Local Configuration
+score BAYES_99 6.0
+score BAYES_00 0.5
+score URIBL_BLOCKED 3.0
