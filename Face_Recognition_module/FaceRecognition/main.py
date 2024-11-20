@@ -14,7 +14,7 @@ class FacialRecognition:
         self.counter = 0
         self.face_match = False
         self.base_dir= Path(__file__).parent #Finds the script directory
-        self.image_path = self.base_dir / "known_faces" / "aditya.jpg"
+        self.image_path = self.base_dir / "known_faces" / "Aditya.jpg"
         self.reference_img = cv2.imread(str(self.image_path))
         if self.reference_img is None:
             raise FileNotFoundError("Reference image could not be loaded. Check the file path.")
