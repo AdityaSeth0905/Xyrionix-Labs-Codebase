@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Xyronix Labs - Future is Here">
+    <title>Xyronix Labs Pvt. Ltd.</title>
+    <link rel="stylesheet" href="../../css/styles.css"> <!-- Dynamic CSS Link -->
+
+    <!-- React and ReactDOM CDN -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+    <!-- Babel for JSX Support -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script defer src="../../frontend/src/index.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Xyronix Labs Pvt. Ltd.</h1>
+        <nav>
+            <button onclick="location.href='#home'">Home</button>
+            <button onclick="location.href='#contact'">Contact</button>
+            <button onclick="location.href='#about'">About Us</button>
+            <button onclick="location.href='#products'">Products</button>
+            <button onclick="location.href='#research'">Research</button>
+            <button onclick="location.href='#gallery'">Gallery</button>
+            <button onclick="location.href='#services'">Services</button>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- About the Company -->
+        <section id="about">
+            <h1>About Xyronix Labs</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet turpis non orci scelerisque, at euismod purus gravida. Sed ut tincidunt eros.</p>
+        </section>
+
+        <!-- About the Product -->
+        <section id="about-product">
+            <h1>About Our Product</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac sagittis elit. Nulla facilisi. Integer a libero ac lorem suscipit accumsan.</p>
+        </section>
+
+        <!-- Technology -->
+        <section id="technology">
+            <h1>Technology</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tempor lorem, vel convallis neque. Curabitur tempor, libero ut tincidunt ultricies.</p>
+        </section>
+
+        <!-- What is Fire Early Warning System -->
+        <section id="fire-warning-system">
+            <h1>What is Fire Early Warning System?</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere diam vitae odio cursus, sit amet scelerisque lorem facilisis.</p>
+        </section>
+
+        <!-- Pros & Cons -->
+        <section id="pros-cons">
+            <h1>Pros & Cons</h1>
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th style="border-right: 1px solid black;">Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border-right: 1px solid black;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 1px solid black;">Vivamus sit amet arcu ac lorem auctor sollicitudin.</td>
+                        <td>Quisque non erat sit amet metus feugiat suscipit.</td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 1px solid black;">Curabitur nec urna magna, nec dictum purus pellentesque.</td>
+                        <td>Fusce viverra, purus sit amet gravida sollicitudin, lorem dui facilisis metus.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        <!-- Image Slideshow -->
+        <section id="gallery">
+            <h1>Image Slideshow</h1>
+            <div class="slideshow">
+                <img src="../../assets/images/slide1.jpg" alt="Slide 1">
+                <img src="../../assets/images/slide2.jpg" alt="Slide 2">
+                <img src="../../assets/images/slide3.jpg" alt="Slide 3">
+            </div>
+        </section>
+
+        <!-- How Our Product Works -->
+        <section id="product-works">
+            <h1>How Our Product Works</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec urna magna.</p>
+        </section>
+
+        <!-- Video Section -->
+        <section id="video">
+            <h1>Product Video</h1>
+            <video controls>
+                <source src="../../assets/video/demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <!-- F & Q Section -->
+        <section id="faq">
+            <h1>Frequently Asked Questions</h1>
+            
+            <div class="faq-item">
+                <h3>What does your product do?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere diam vitae odio cursus, sit amet scelerisque lorem facilisis.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>How does the system detect fires?</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Is the system scalable?</h3>
+                <p>Curabitur nec urna magna, nec dictum purus pellentesque. Sed vitae felis nunc. Aenean sit amet est non felis elementum malesuada.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How easy is the installation process?</h3>
+                <p>Vivamus sit amet arcu ac lorem auctor sollicitudin. Nulla facilisi. Integer a libero ac lorem suscipit accumsan. Sed ut tincidunt eros.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How can I get in touch with support?</h3>
+                <p>If you have any issues or queries, you can contact our support team at <a href="mailto:xyronixlabs@gmail.com">xyronixlabs@gmail.com</a>.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- React Root Element -->
+    <div id="root"></div> <!-- React app will mount here -->
+
+    <!-- Footer Section -->
+    <footer>
+        <h2>Xyronix Labs</h2>
+        <p><em>Future is Here</em></p>
+        <p>&copy; 2024 Xyronix Labs. All rights reserved.</p>
+        <p>Contact us at: <a href="mailto:xyronixlabs@gmail.com">xyronixlabs@gmail.com</a></p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/xyronixlabs" target="_blank"><img src="../../assets/images/icons8-instagram-color-16.png" alt="Instagram"></a>
+            <a href="https://www.twitter.com/XyronixLabs" target="_blank"><img src="../../assets/images/icons8-twitterx-material-filled-16.png" alt="Twitter"></a>            
+            <a href="https://www.linkedin.com/company/xyronixlabs" target="_blank"><img src="../../assets/images/icons8-linkedin-color-16.png" alt="LinkedIn"></a>            
+            <a href="https://wa.me/+918882187203" target="_blank"><img src="../../assets/images/icons8-whatsapp-water-color-16.png" alt="WhatsApp"></a>
+        </div>
+        <button onclick="location.href='#privacy-policy'">Privacy Policy</button>
+    </footer>
+</body>
+</html>
