@@ -1,7 +1,7 @@
-import React from 'react';
-import { useState } from 'react';
+//import React from 'react';
+//import { useState } from 'react';
 import './App.css';
-import Chatbot from './Chatbot';
+//import Chatbot from './Chatbot';
 import content from '../src/components/content.json';
 import "./assets/instagram.png"
 import PrivacyPolicy from './components/privacyPolicy';
@@ -106,8 +106,7 @@ function App() {
       </div>
       <button id='privacyPolicy' onClick={PrivacyPolicy}>Privacy Policy</button>
     </footer>
-      {/* Chatbot Instance */}
-      <Chatbot />
+      
     </div>
   )
 }
