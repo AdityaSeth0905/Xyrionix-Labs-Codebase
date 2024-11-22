@@ -1,0 +1,22 @@
+.privacy-policy {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .privacy-policy h1,
+  .privacy-policy h2,
+  .privacy-policy h3 {
+    color: #007bff;
+  }
+  
+  .privacy-policy ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .privacy-policy p {
+    line-height: 1.6;
+  }
+  
