@@ -1,18 +1,20 @@
 import express from 'express';
-import bodyParser from 'body-parser';
+//import bodyParser from 'body-parser';
 
 const app = express();
 const port = 8000;
 
-app.use(bodyParser.json());
+app.use(express.json());
 
-// Handle POST requests to the /chat endpoint
 app.post('/chat', (req, res) => {
-  const userMessage = req.body.message;
-  // Here, you can integrate your AI/ML model or predefined responses
-  res.json({ response: `You said: ${userMessage}` });
+  const { message } = req.body;
+
+  // Logic to generate chatbot response
+  const chatbotResponse = `You said: ${message}`;
+  
+  res.json({ response: chatbotResponse });
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(8000, () => {
+  console.log('Chatbot backend is running on http://localhost:8000');
 });

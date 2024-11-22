@@ -1,50 +1,61 @@
 import React, { useState } from 'react';
+import './Chatbot.css';
 
-const Chatbot = () => {
-  const [messages, setMessages] = useState<{ user: string; bot: string }[]>([]);
-  const [input, setInput] = useState('');
+const Chatbot: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [userInput, setUserInput] = useState('');
+  const [chatResponse, setChatResponse] = useState('');
 
-  const sendMessage = async () => {
-    if (!input.trim()) return;
+  const toggleChatbot = () => setIsOpen(!isOpen);
 
-    const userMessage = input;
-    setMessages([...messages, { user: userMessage, bot: '' }]);
-    setInput('');
-
+  const handleUserInput = async () => {
     try {
-      const response = await fetch('http://localhost:8000/chat/', {
+      const response = await fetch('http://localhost:8000/chat', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userMessage }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: userInput }),
       });
-
       const data = await response.json();
-      const botMessage = data.response;
-
-      setMessages((prev) => [...prev.slice(0, -1), { user: userMessage, bot: botMessage }]);
+      setChatResponse(data.response);
+      setUserInput(''); // Clear input after sending
     } catch (error) {
-      setMessages((prev) => [...prev.slice(0, -1), { user: userMessage, bot: 'Error connecting to the server.' }]);
+      console.error('Error communicating with chatbot API:', error);
+      setChatResponse('Sorry, there was an error.');
     }
   };
 
   return (
-    <div className="chatbot">
-      <div className="messages">
-        {messages.map((msg, index) => (
-          <div key={index}>
-            <p><strong>You:</strong> {msg.user}</p>
-            <p><strong>Bot:</strong> {msg.bot}</p>
+    <div className="chatbot-container">
+      {/* Chatbot Toggle Button */}
+      <button className="chatbot-icon" onClick={toggleChatbot}>
+        💬
+      </button>
+
+      {/* Chatbot Popup */}
+      {isOpen && (
+        <div className="chatbot">
+          <div className="chatbot-header">
+            <h2>Chat with Us</h2>
+            <button className="close-button" onClick={toggleChatbot}>
+              X
+            </button>
           </div>
-        ))}
-      </div>
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Type a message..."
-        onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
-      />
-      <button onClick={sendMessage}>Send</button>
+          <div className="chatbot-body">
+            <input
+              type="text"
+              value={userInput}
+              placeholder="Type your message..."
+              onChange={(e) => setUserInput(e.target.value)}
+            />
+            <button onClick={handleUserInput}>Send</button>
+          </div>
+          <div className="chatbot-response">
+            <strong>Response:</strong> {chatResponse}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

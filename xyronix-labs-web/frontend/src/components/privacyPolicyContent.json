@@ -1,0 +1,147 @@
+{
+    "title": "Privacy Policy for Fire Detection and Suppression System",
+    "sections": [
+      {
+        "id": "info-collection",
+        "title": "1. Information We Collect",
+        "content": [
+          {
+            "heading": "1.1 System Data",
+            "items": [
+              "Sensor readings (smoke, temperature, flame, and camera data).",
+              "Logs of fire detection, verification, and suppression events.",
+              "System status and performance metrics."
+            ]
+          },
+          {
+            "heading": "1.2 Personal Data",
+            "items": [
+              "Name, contact details (email, phone number), and location of users.",
+              "Preferences and configurations set in the Lab Management System (LMS)."
+            ]
+          },
+          {
+            "heading": "1.3 Device Data",
+            "items": [
+              "IoT device identifiers (e.g., ESP32 configurations).",
+              "IP addresses and system usage logs."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "info-usage",
+        "title": "2. How We Use Your Information",
+        "content": [
+          "Monitor and manage the fire detection and suppression system.",
+          "Use sensor and event data for training AI models and improving detection accuracy.",
+          "Notify users of system events, updates, and maintenance requirements.",
+          "Store logs and reports for fire incident documentation and regulatory compliance."
+        ]
+      },
+      {
+        "id": "data-sharing",
+        "title": "3. Data Sharing and Disclosure",
+        "content": [
+          {
+            "heading": "3.1 With Third Parties",
+            "items": [
+              "Emergency Services: In case of a fire event, system logs and location data may be shared with local fire departments.",
+              "Service Providers: To process payments, store data securely, or send notifications."
+            ]
+          },
+          {
+            "heading": "3.2 Within the Company",
+            "items": [
+              "Data collected from your system may be stored in the centralized LMS for internal research and AI model training."
+            ]
+          },
+          {
+            "heading": "3.3 Legal Obligations",
+            "items": [
+              "We may disclose data to comply with legal requests or enforceable governmental requirements."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "data-security",
+        "title": "4. Data Storage and Security",
+        "content": [
+          {
+            "heading": "4.1 Storage Locations",
+            "items": [
+              "Data is stored in two copies: Local LMS for immediate processing and Cloud LMS for backup and AI development."
+            ]
+          },
+          {
+            "heading": "4.2 Security Measures",
+            "items": [
+              "Data is encrypted both at rest and in transit.",
+              "Role-based access ensures only authorized personnel can access sensitive data.",
+              "Regular audits and updates ensure the system remains secure against emerging threats."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "5. User Rights",
+        "content": [
+          {
+            "heading": "5.1 Access and Control",
+            "items": [
+              "Users have the right to view system logs and data collected by their network.",
+              "Users can modify notification preferences and system settings."
+            ]
+          },
+          {
+            "heading": "5.2 Data Deletion",
+            "items": [
+              "Users may request the deletion of their personal data, subject to legal and operational requirements."
+            ]
+          },
+          {
+            "heading": "5.3 Data Sharing Preferences",
+            "items": [
+              "Users can opt out of non-essential data sharing, such as anonymized data used for AI model improvements."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cookies-tracking",
+        "title": "6. Cookies and Tracking",
+        "content": [
+          "For systems with dashboards or web applications:",
+          "Cookies are used to maintain session data and improve usability.",
+          "Users can manage cookie preferences through their browser settings."
+        ]
+      },
+      {
+        "id": "children-privacy",
+        "title": "7. Children’s Privacy",
+        "content": [
+          "Our services are not intended for individuals under the age of 13. We do not knowingly collect data from children."
+        ]
+      },
+      {
+        "id": "updates",
+        "title": "8. Updates to This Policy",
+        "content": [
+          "We may update this Privacy Policy periodically to reflect changes in technology, regulations, or company practices. Any changes will be communicated through the LMS dashboard or email notifications."
+        ]
+      },
+      {
+        "id": "contact",
+        "title": "9. Contact Information",
+        "content": [
+          "For questions or concerns regarding this Privacy Policy:",
+          "Email: privacy@xyronixlabs.com",
+          "Phone: +91 8882187203",
+          "Address: Xyronix Labs Pvt. Ltd., [Your Company Address]"
+        ]
+      }
+    ]
+  }
+  
