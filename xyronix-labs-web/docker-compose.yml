@@ -1,24 +1,16 @@
 version: '3.8'
-
 services:
   app:
     build:
-      context: .  # Root directory where the combined Dockerfile exists
-      dockerfile: Dockerfile
+      context: .  # Root directory where both frontend and backend reside
+      dockerfile: Dockerfile  # Use the combined Dockerfile
     ports:
-      - "5173:5173"  # Frontend (Vite development server)
-      - "8000:8000"  # Backend (FastAPI server)
-      - "1000:1000"  # Render's default port for hosting
+      - "5173:5173"  # Frontend port (Vite)
+      - "1000:1000"  # Backend port (Express HTTP server)
     volumes:
-      - ./frontend:/app/frontend
-      - ./backend:/app/backend
+      - ./frontend:/app/frontend  # Mount frontend for live reload
+      - ./backend:/app/backend    # Mount backend for live reload
     environment:
-      # Frontend-specific settings
-      - CHOKIDAR_USEPOLLING=true
-
-      # Backend-specific settings
-      - UVLOOP=1
-    stdin_open: true
-    command: |
-      sh -c "cd /app/backend && uvicorn src.chatbot:app --host 0.0.0.0 --port 8000 & 
-             cd /app/frontend && npm run dev"
+      - CHOKIDAR_USEPOLLING=true  # For live reload on Windows
+    stdin_open: true  # To keep container interactive
+    command: bash -c "npm --prefix /app/frontend run dev & node /app/backend/server.js"  # Run both frontend and backend
