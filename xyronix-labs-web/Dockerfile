@@ -44,7 +44,7 @@ COPY --from=frontend-build /app/frontend/dist /app/frontend/dist
 COPY --from=backend-build /app/backend /app/backend
 
 # Install necessary backend dependencies (Uvicorn for FastAPI)
-RUN pip install -r "./requirements.txt"
+RUN pip install uvicorn
 
 # Install necessary dependencies to run the frontend (optional: if you want to serve the frontend directly from the backend)
 RUN apt-get update && apt-get install -y \
