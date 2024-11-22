@@ -11,7 +11,7 @@ COPY frontend/package*.json ./
 RUN npm install
 
 # Copy the rest of the frontend application
-COPY frontend ./
+COPY frontend ./ 
 
 # Build the frontend (Production build for deployment)
 RUN npm run build
@@ -29,7 +29,7 @@ COPY backend/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the backend source code
-COPY backend ./
+COPY backend ./ 
 
 # Stage 3: Final image (combining both frontend and backend)
 FROM python:3.9-slim
@@ -46,6 +46,11 @@ COPY --from=backend-build /app/backend /app/backend
 # Install necessary backend dependencies (Uvicorn for FastAPI)
 RUN pip install uvicorn
 
+# Install necessary dependencies to run the frontend (optional: if you want to serve the frontend directly from the backend)
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
 # Expose the ports for frontend and backend
 EXPOSE 5173 8000
 
@@ -54,5 +59,4 @@ ENV FRONTEND_PORT=5173
 ENV BACKEND_PORT=8000
 
 # Command to run both frontend (Vite) and backend (FastAPI) simultaneously
-# You can use a process manager like `supervisord` or `concurrently` for running both
 CMD ["sh", "-c", "npm --prefix /app/frontend run dev & uvicorn src.chatbot:app --host 0.0.0.0 --port 8000 --reload --loop uvloop"]
