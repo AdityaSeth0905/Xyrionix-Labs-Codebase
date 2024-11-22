@@ -1,0 +1,28 @@
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chat-window {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    width: 75%;
+    padding: 5px;
+  }
+  
+  button {
+    width: 20%;
+    padding: 5px;
+  }
+  
