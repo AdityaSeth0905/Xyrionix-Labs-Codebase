@@ -46,10 +46,8 @@
         {
             "High Complexity":"The system’s advanced architecture, involving AI algorithms and IoT devices, may require significant expertise for installation and maintenance.",
             "Cost of Deployment":"The combination of hardware (e.g., cameras, sensors) and advanced AI technologies could make the system expensive, especially for smaller setups.",
-            "False Positives":"Despite using AI, occasional false alarms due to environmental anomalies or sensor malfunctions may occur.",
             "Dependence on Connectivity":"Requires stable internet and power connections for optimal operation; remote or poorly connected areas may face challenges.",
             "Maintenance Requirements":"Regular sensor calibration, battery checks, and software updates are essential to maintain system efficiency.",
-            "Data Privacy Concerns":"Continuous data collection by cameras and sensors, combined with centralized cloud storage, could raise privacy issues if not managed properly.",
             "Potential Integration Challenges":"Integrating with existing infrastructure or other security systems may require custom configurations."
         }
     ],
