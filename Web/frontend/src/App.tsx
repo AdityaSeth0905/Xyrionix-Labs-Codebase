@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import content from './components/content.json';
 import Loading from './components/Loading'; // Create a simple loading component
-
+import '@fortawesome/fontawesome-free/css/all.min.css';
 // Dynamic page import function
 const dynamicPageImport = (pageName: string) => {
   return lazy(() => {
