@@ -3,7 +3,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import content from './content.json';
 
 const MainContent: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+  //const [activeSection, setActiveSection] = useState<string | null>(null);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
@@ -11,11 +11,11 @@ const MainContent: React.FC = () => {
     setIsDarkTheme(!isDarkTheme);
     document.documentElement.classList.toggle('dark');
   };
-
+{/*
   const toggleSection = (sectionId: string) => {
     setActiveSection(activeSection === sectionId ? null : sectionId);
   };
-
+*/}
   const toggleFAQCategory = (category: string) => {
     setActiveCategory(activeCategory === category ? null : category);
   };
@@ -55,130 +55,134 @@ const MainContent: React.FC = () => {
 
 {/* Sections Container */}
 <section className="max-w-6xl mx-auto space-y-8">
-  {content.sections.map((section) => (
-    <div 
-      key={section.id} 
-      className={`
-        ${bgClass('bg-white', 'bg-gray-800')}
-        shadow-lg rounded-lg overflow-hidden 
-        transition-all duration-300 
-        hover:shadow-xl transform hover:-translate-y-2
-        w-full
-      `}
-    >
-      <div className="p-8">
-        <h2 className={`
-          text-3xl font-bold 
-          ${textClass('text-blue-600', 'text-blue-400')} 
-          mb-6 border-b-2 border-blue-500 pb-4
-        `}>
-          {section.aboutProduct ? "About Our Product" : section.title}
-        </h2>
-        
-        {/* Conditional rendering for About Product */}
-        {section.aboutProduct ? (
-          <div>
-            <p className={`
-              ${textClass('text-gray-700', 'text-gray-300')}
-              leading-relaxed text-lg mb-6
-            `}>
-              {section.aboutProduct.description}
-            </p>
-
-            {/* Features Section */}
-            <div className="mb-6">
-              <h3 className={`
-                text-2xl font-semibold 
-                ${textClass('text-blue-500', 'text-blue-300')}
-                mb-4
-              `}>
-                Key Features
-              </h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                {section.aboutProduct.features.map((feature, index) => (
-                  <div 
-                    key={index} 
-                    className={`
-                      ${bgClass('bg-gray-100', 'bg-gray-700')}
-                      p-4 rounded-lg
-                    `}
-                  >
-                    <h4 className={`
-                      text-xl font-bold mb-2
-                      ${textClass('text-blue-600', 'text-blue-400')}
-                    `}>
-                      {feature.title}
-                    </h4>
-                    <p className={`
-                      ${textClass('text-gray-600', 'text-gray-300')}
-                      text-md
-                    `}>
-                      {feature.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Applications Section */}
-            <div className="mb-6">
-              <h3 className={`
-                text-2xl font-semibold 
-                ${textClass('text-blue-500', 'text-blue-300')}
-                mb-4
-              `}>
-                Applications
-              </h3>
-              <ul className={`
-                list-disc list-inside
-                ${textClass('text-gray-700', 'text-gray-300')}
-              `}>
-                {section.aboutProduct.applications.map((app, index) => (
-                  <li key={index} className="mb-2">{app}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Benefits Section */}
-            <div className="mb-6">
-              <h3 className={`
-                text-2xl font-semibold 
-                ${textClass('text-blue-500', 'text-blue-300')}
-                mb-4
-              `}>
-                Benefits
-              </h3>
-              <ul className={`
-                list-disc list-inside
-                ${textClass('text-gray-700', 'text-gray-300')}
-              `}>
-                {section.aboutProduct.benefits.map((benefit, index) => (
-                  <li key={index} className="mb-2">{benefit}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Mission Statement */}
-            <div className="italic p-4 border-l-4 border-blue-500">
+  {content.sections
+    .filter(section => section.aboutProduct || section.content) // Filter out empty sections
+    .map((section) => (
+      <div 
+        key={section.id} 
+        className={`
+          ${bgClass('bg-white', 'bg-gray-800')}
+          shadow-lg rounded-lg overflow-hidden 
+          transition-all duration-300 
+          hover:shadow-xl transform hover:-translate-y-2
+          w-full
+        `}
+      >
+        <div className="p-8">
+          <h2 className={`
+            text-3xl font-bold 
+            ${textClass('text-blue-600', 'text-blue-400')} 
+            mb-6 border-b-2 border-blue-500 pb-4
+          `}>
+            {section.aboutProduct ? "About Our Product" : section.title}
+          </h2>
+          
+          {/* Conditional rendering for About Product */}
+          {section.aboutProduct ? (
+            <div>
               <p className={`
                 ${textClass('text-gray-700', 'text-gray-300')}
+                leading-relaxed text-lg mb-6
               `}>
-                {section.aboutProduct.mission}
+                {section.aboutProduct.description}
               </p>
+
+              {/* Features Section */}
+              <div className="mb-6">
+                <h3 className={`
+                  text-2xl font-semibold 
+                  ${textClass('text-blue-500', 'text-blue-300')}
+                  mb-4
+                `}>
+                  Key Features
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {section.aboutProduct.features.map((feature, index) => (
+                    <div 
+                      key={index} 
+                      className={`
+                        ${bgClass('bg-gray-100', 'bg-gray-700')}
+                        p-4 rounded-lg
+                      `}
+                    >
+                      <h4 className={`
+                        text-xl font-bold mb-2
+                        ${textClass('text-blue-600', 'text-blue-400')}
+                      `}>
+                        {feature.title}
+                      </h4>
+                      <p className={`
+                        ${textClass('text-gray-600', 'text-gray-300')}
+                        text-md
+                      `}>
+                        {feature.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Applications Section */}
+              <div className="mb-6">
+                <h3 className={`
+                  text-2xl font-semibold 
+                  ${textClass('text-blue-500', 'text-blue-300')}
+                  mb-4
+                `}>
+                  Applications
+                </h3>
+                <ul className={`
+                  list-disc list-inside
+                  ${textClass('text-gray-700', 'text-gray-300')}
+                `}>
+                  {section.aboutProduct.applications.map((app, index) => (
+                    <li key={index} className="mb-2">{app}</li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Benefits Section */}
+              <div className="mb-6">
+                <h3 className={`
+                  text-2xl font-semibold 
+                  ${textClass('text-blue-500', 'text-blue-300')}
+                  mb-4
+                `}>
+                  Benefits
+                </h3>
+                <ul className={`
+                  list-disc list-inside
+                  ${textClass('text-gray-700', 'text-gray-300')}
+                `}>
+                  {section.aboutProduct.benefits.map((benefit, index) => (
+                    <li key={index} className="mb-2">{benefit}</li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Mission Statement */}
+              <div className="italic p-4 border-l-4 border-blue-500">
+                <p className={`
+                  ${textClass('text-gray-700', 'text-gray-300')}
+                `}>
+                  {section.aboutProduct.mission}
+                </p>
+              </div>
             </div>
-          </div>
-        ) : 
-        (
-          <p className={`
-            ${textClass('text-gray-700', 'text-gray-300')}
-            leading-relaxed text-lg
-          `}>
-            {section.content}
-          </p>
-        )}
+          ) : 
+          (
+            <p className={`
+              ${textClass('text-gray-700', 'text-gray-300')}
+              leading-relaxed text-lg
+            `}>
+              {section.content}
+            </p>
+          )}
+        </div>
       </div>
-    </div>
-  ))}
+    ))}
+
+
 
   {/* Technology Used Section */}
   <section className="max-w-6xl mx-auto px-4 py-8">
@@ -260,9 +264,6 @@ const MainContent: React.FC = () => {
       </div>
     </div>
   </section>
-</section>
-        
-
       {/* Pros & Cons Section */}
       <section 
         id="pros-cons" 
@@ -402,6 +403,7 @@ const MainContent: React.FC = () => {
           ))}
         </div>
       </section>
+</section>
 
       {/* Video Section */}
       <section id="video" className={`
