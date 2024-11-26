@@ -1,0 +1,63 @@
+{
+  "compilerOptions": {
+    // Basic Compiler Options
+    "target": "es2022",               // Use modern ECMAScript features
+    "module": "commonjs",              // Use CommonJS module system
+    "lib": ["es2022"],                 // Include modern ES library types
+    "outDir": "./dist",                // Output compiled files to dist folder
+    "rootDir": "./src",                // Source files location
+
+    // Strict Type Checking
+    "strict": true,                    // Enable all strict type checking options
+    "noImplicitAny": true,             // Raise error on implicit 'any' type
+    "strictNullChecks": true,          // Enable strict null checks
+    "strictFunctionTypes": true,       // Enable strict function type checking
+    "strictBindCallApply": true,       // Enable strict 'bind', 'call', and 'apply' methods
+    "noImplicitThis": true,            // Raise error on implicit 'this'
+    "alwaysStrict": true,              // Parse in strict mode and emit "use strict"
+
+    // Module Resolution
+    "moduleResolution": "node",        // Resolve modules using Node.js style
+    "esModuleInterop": true,           // Enable importing CJS modules as ES modules
+    "resolveJsonModule": true,         // Allow importing JSON files
+    "allowSyntheticDefaultImports": true, // Allow default import from modules without default export
+
+    // Additional Checks
+    "noUnusedLocals": true,            // Report errors on unused locals
+    "noUnusedParameters": true,        // Report errors on unused parameters
+    "noImplicitReturns": true,         // Ensure all code paths return a value
+    "noFallthroughCasesInSwitch": true,// Report errors for fallthrough cases in switch
+
+    // Source Map and Debugging
+    "sourceMap": true,                 // Generate source map files
+    "inlineSourceMap": false,          // Don't inline source maps
+    "declaration": true,               // Generate .d.ts files
+    "removeComments": true,            // Remove comments in compiled files
+
+    // Advanced Options
+    "forceConsistentCasingInFileNames": true, // Ensure consistent casing in imports
+    "skipLibCheck": true,              // Skip type checking of declaration files
+
+    // Type Definitions
+    "types": [
+      "node",                          // Include Node.js type definitions
+      "jest",                          // Optional: Include Jest if using for testing
+      "express" ,                      // Optional: Include Express types
+
+      "dotenv"
+    ]
+  },
+
+  // Specify which files to compile
+  "include": [
+    "src/**/*",                        // Include all files in src directory
+    "tests/**/*"                       // Optional: Include test files
+, "src/middleware"  ],
+
+  // Specify files/folders to exclude
+  "exclude": [
+    "node_modules",                    // Exclude node_modules
+    "dist",                            // Exclude output directory
+    "**/*.spec.ts"                     // Exclude test spec files from main compilation
+  ]
+}
