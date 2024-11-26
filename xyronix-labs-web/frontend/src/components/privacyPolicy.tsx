@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react';
 import privacyPolicy from '../components/privacyPolicyContent.json'; // Path to your JSON file
 import "./privacyPolicy.css"; // Path to your CSS file
 

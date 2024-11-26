@@ -1,0 +1,81 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+env:
+  NODE_VERSION: 18.x
+
+jobs:
+  backend-ci-cd:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js ${{ env.NODE_VERSION }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+
+    - name: Install Backend Dependencies
+      working-directory: ./backend
+      run: npm ci
+
+    - name: Run Backend Linter
+      working-directory: ./backend
+      run: npm run lint
+
+    - name: Run Backend Tests
+      working-directory: ./backend
+      run: npm test
+
+    - name: Build Backend
+      working-directory: ./backend
+      run: npm run build
+
+    - name: Deploy Backend to Render
+      env:
+        RENDER_BACKEND_WEBHOOK: ${{ secrets.RENDER_BACKEND_WEBHOOK }}
+      run: |
+        curl -X POST $RENDER_BACKEND_WEBHOOK
+
+  frontend-ci-cd:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js ${{ env.NODE_VERSION }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+
+    - name: Install Frontend Dependencies
+      working-directory: ./frontend
+      run: npm ci
+
+    - name: Run Frontend Linter
+      working-directory: ./frontend
+      run: npm run lint
+
+    - name: Run Frontend Tests
+      working-directory: ./frontend
+      run: npm test
+
+    - name: Build Frontend
+      working-directory: ./frontend
+      run: npm run build
+
+    - name: Deploy Frontend to Render
+      env:
+        RENDER_FRONTEND_WEBHOOK: ${{ secrets.RENDER_FRONTEND_WEBHOOK }}
+      run: |
+        curl -X POST $RENDER_FRONTEND_WEBHOOK
