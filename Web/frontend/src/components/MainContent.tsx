@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import content from './content.json';
 
+
 const MainContent: React.FC = () => {
-  //const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  // Initialize state based on the user's system preference
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [isDarkTheme, setIsDarkTheme] = useState(prefersDarkScheme);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
+  useEffect(() => {
+    // Set the class on the document element based on the theme
+    document.documentElement.classList.toggle('dark', isDarkTheme);
+  }, [isDarkTheme]);
+
   const toggleTheme = () => {
-    setIsDarkTheme(!isDarkTheme);
-    document.documentElement.classList.toggle('dark');
+    setIsDarkTheme(prevTheme => !prevTheme);
   };
-{/*
-  const toggleSection = (sectionId: string) => {
-    setActiveSection(activeSection === sectionId ? null : sectionId);
-  };
-*/}
+
   const toggleFAQCategory = (category: string) => {
     setActiveCategory(activeCategory === category ? null : category);
   };
@@ -27,6 +29,9 @@ const MainContent: React.FC = () => {
   // Dynamic text color classes
   const textClass = (lightClass: string, darkClass: string) => 
     isDarkTheme ? darkClass : lightClass;
+
+
+
 
   return (
     <main 
@@ -265,77 +270,80 @@ const MainContent: React.FC = () => {
     </div>
   </section>
       {/* Pros & Cons Section */}
-      <section 
-        id="pros-cons" 
-        className={`
-          ${bgClass('bg-gray-50', 'bg-gray-800')} 
-          rounded-lg shadow-md p-8
-        `}
-      >
-        <h2 className={`
-          text-3xl font-bold text-center 
-          ${textClass('text-blue-600', 'text-blue-400')} 
-          mb-8
-        `}>
-          Pros & Cons
-        </h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Pros Column */}
-          <div className={`
-            ${bgClass('bg-white', 'bg-gray-700')}
-            rounded-lg shadow-md p-6
-          `}>
-            <h3 className={`
-              text-xl font-semibold text-green-600 mb-4 
-              flex items-center
-            `}>
-              <i className="fas fa-check-circle mr-2"></i>Pros
-            </h3>
-            <ul className="space-y-4">
-              {content.pros.map((pro, index) => (
-                <li 
-                  key={index} 
-                  className={`
-                    flex items-start space-x-3 
-                    ${textClass('text-gray-800', 'text-gray-200')}
-                  `}
-                >
-                  <i className="fas fa-check text-green-500 mt-1"></i>
-                  <span>{Object.values(pro)[0]}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+<section 
+  id="pros-cons" 
+  className={`
+    ${bgClass('bg-gray-50', 'bg-gray-800')} 
+    rounded-lg shadow-md p-8
+  `}
+>
+  <h2 className={`
+    text-3xl font-bold text-center 
+    ${textClass('text-blue-600', 'text-blue-400')} 
+    mb-8
+  `}>
+    Pros & Cons
+  </h2>
+  <div className="grid md:grid-cols-2 gap-8">
+    {/* Pros Column */}
+    <div className={`
+      ${bgClass('bg-white', 'bg-gray-700')}
+      rounded-lg shadow-md p-6
+    `}>
+      <h3 className={`
+        text-xl font-semibold text-green-600 mb-4 
+        flex items-center
+      `}>
+        <i className="fas fa-check-circle mr-2"></i>Pros
+      </h3>
+      <ul className="space-y-4">
+        {Object.entries(content.pros[0]).map(([key, value]) => (
+          <li 
+            key={key} 
+            className={`
+              flex items-start space-x-3 
+              ${textClass('text-gray-800', 'text-gray-200')}
+            `}
+          >
+            <i className="fas fa-check text-green-500 mt-1"></i>
+            <span>
+              <strong className="mr-2">{key}:</strong>{value}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
 
-          {/* Cons Column */}
-          <div className={`
-            ${bgClass('bg-white', 'bg-gray-700')}
-            rounded-lg shadow-md p-6
-          `}>
-            <h3 className={`
-              text-xl font-semibold text-red-600 mb-4 
-              flex items-center
-            `}>
-              <i className="fas fa-times-circle mr-2"></i>Cons
-            </h3>
-            <ul className="space-y-4">
-              {content.cons.map((con, index) => (
-                <li 
-                  key={index} 
-                  className={`
-                    flex items-start space-x-3 
-                    ${textClass('text-gray-800', 'text-gray-200')}
-                  `}
-                >
-                  <i className="fas fa-times text-red-500 mt-1"></i>
-                  <span>{Object.values(con)[0]}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
+    {/* Cons Column */}
+    <div className={`
+      ${bgClass('bg-white', 'bg-gray-700')}
+      rounded-lg shadow-md p-6
+    `}>
+      <h3 className={`
+        text-xl font-semibold text-red-600 mb-4 
+        flex items-center
+      `}>
+        <i className="fas fa-times-circle mr-2"></i>Cons
+      </h3>
+      <ul className="space-y-4">
+        {Object.entries(content.cons[0]).map(([key, value]) => (
+          <li 
+            key={key} 
+            className={`
+              flex items-start space-x-3 
+              ${textClass('text-gray-800', 'text-gray-200')}
+            `}
+          >
+            <i className="fas fa-times text-red-500 mt-1"></i>
+            <span>
+              <strong className="mr-2">{key}:</strong>{value}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
       {/* FAQ Section */}
       <section 
         id="faq" 
