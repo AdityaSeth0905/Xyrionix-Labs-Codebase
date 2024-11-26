@@ -1,66 +1,115 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import content from './content.json';
 
 const Footer: React.FC = () => {
   const footerData = content.footer;
+  const currentYear = new Date().getFullYear();
 
-  // Function to handle Privacy Policy click
-  const PrivacyPolicy = () => {
-    // Implement your privacy policy logic here
-    alert("Privacy Policy clicked!");
+  // Function to handle Privacy Policy navigation
+  const navigateToPrivacyPolicy = () => {
+    // Use React Router navigation instead of alert
+    // Assuming you have a route set up for privacy policy
+    // history.push('/privacy-policy');
   };
 
   return (
-    <footer className="bg-gray-800 text-white py-4 px-4">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        
-        {/* Company Name and Tagline on the Left */}
-        <div className="flex flex-col items-start mt-2 md:mt-0">
-          <h2 className="text-2xl font-bold">{footerData.companyName}</h2>
-          <p className="text-sm italic">{footerData.slogan}</p>
+    <footer 
+      className="bg-gray-900 text-gray-200 py-12 px-6 transition-all duration-300 ease-in-out"
+    >
+      <div className="container mx-auto max-w-6xl grid md:grid-cols-3 gap-8">
+        {/* Company Information Column */}
+        <div className="flex flex-col space-y-4">
+          <div>
+            <h2 className="text-3xl font-bold text-white mb-2">
+              {footerData.companyName}
+            </h2>
+            <p className="text-sm italic text-gray-400">
+              {footerData.slogan}
+            </p>
+          </div>
+          
+          {/* Contact Information */}
+          <div>
+            <h3 className="text-xl font-semibold mb-2">Contact</h3>
+            <a 
+              href={`mailto:${footerData.contactEmail}`} 
+              className="text-gray-300 hover:text-white transition-colors 
+                         flex items-center space-x-2"
+            >
+              <i className="fas fa-envelope mr-2"></i>
+              {footerData.contactEmail}
+            </a>
+          </div>
         </div>
 
-        {/* Right Side Container */}
-        <div className="flex flex-col items-end mt-2">
-          {/* Privacy Policy at the top */}
-          <button 
-            id='privacyPolicy' 
-            onClick={PrivacyPolicy} 
-            className="text-white underline mb-2"
-          >
-            Privacy Policy
-          </button>
+        {/* Quick Links Column */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+          <ul className="space-y-2">
+            <li>
+              <Link 
+                to="/about-us" 
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/products" 
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                Products
+              </Link>
+            </li>
+            <li>
+              <button 
+                onClick={navigateToPrivacyPolicy} 
+                className="text-gray-300 hover:text-white transition-colors 
+                           text-left focus:outline-none"
+              >
+                Privacy Policy
+              </button>
+            </li>
+          </ul>
+        </div>
 
-          {/* Social Media Links */}
-          <div className="flex space-x-4 mb-2">
+        {/* Social Media Column */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Connect With Us</h3>
+          <div className="flex space-x-4">
             {footerData.socialMedia.map((social, index) => (
               <a 
                 key={index} 
                 href={social.url} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="social-media-link hover:opacity-75 transition-opacity"
+                className="
+                  text-gray-200 text-2xl 
+                  hover:text-blue-400 
+                  transition-colors 
+                  transform hover:scale-110
+                "
+                aria-label={`${social.platform} profile`}
               >
-                <img 
-                  src={social.logo} 
-                  alt={`${social.platform} logo`} 
-                  className="social-media-logo w-8 h-8" 
-                />
+                <i className={`fab fa-${social.platform.toLowerCase()}`}></i>
               </a>
             ))}
           </div>
-
-          {/* Contact Us at the bottom */}
-          <p className="text-sm">
-            Contact us @ <a href={`mailto:${footerData.contactEmail}`} className="underline">{footerData.contactEmail}</a>
-          </p>
         </div>
       </div>
 
-      {/* Centered Copyright Notice */}
-      <div className="text-center mt-2">
-        <p className="text-sm">
-          &copy; {new Date().getFullYear()} {footerData.companyName}. All rights reserved.
+      {/* Copyright Section */}
+      <div 
+        className="
+          mt-8 pt-6 border-t border-gray-700 
+          text-center text-gray-400 text-sm
+        "
+      >
+        <p>
+          &copy; {currentYear} {footerData.companyName}. 
+          All rights reserved. Crafted with ❤️ by Xyronix Labs.
         </p>
       </div>
     </footer>

@@ -3,18 +3,84 @@
       {
         "id": "about",
         "title": "About Xyronix Labs",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet turpis non orci scelerisque, at euismod purus gravida."
+        "content": "Xyronix Labs is an innovative technology company committed to shaping the future with cutting-edge advancements in AI, IoT, robotics, and data science. Established with a vision to enhance lives and businesses through intelligent systems, Xyronix Labs excels in developing solutions that bridge the gap between emerging technologies and real-world applications. Our flagship offerings include the Fire Early Warning and Detection System, a revolutionary product designed to ensure safety through early fire detection, precise localization, and targeted suppression using state-of-the-art AI and IoT technologies. With scalable and reliable solutions, we cater to a wide range of industries, including residential, commercial, and industrial sectors. At Xyronix Labs, innovation is at the core of what we do. From crafting intelligent systems powered by neural networks to deploying robust cloud-based LMS platforms, our mission is to empower communities with technology that drives efficiency, safety, and sustainable growth. Guided by our motto, Future is Here, we aim to lead the way in harnessing the power of technology for a smarter and safer tomorrow."
       },
       {
-        "id": "about-product",
-        "title": "About Our Product",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac sagittis elit. Nulla facilisi."
+        "aboutProduct": {
+          "id": "about-product",
+          "title": "About Our Product",
+          "description": "The Fire Early Warning and Detection System by Xyronix Labs is an advanced, AI-powered safety solution designed to revolutionize fire detection, localization, and suppression. It integrates cutting-edge technologies like IoT, neural networks, and intelligent water cannon systems to ensure rapid and precise responses to fire hazards.",
+          "features": [
+            {
+              "title": "Multi-Sensor Detection",
+              "description": "Equipped with an array of sensors, including smoke, temperature, flame, and camera systems, the product continuously monitors the environment. These sensors are interconnected via ESP32-based microcontrollers, ensuring real-time data transmission and quick hazard detection."
+            },
+            {
+              "title": "AI-Driven Analysis",
+              "description": "RNNs analyze sensor data over time to identify patterns that indicate potential fire risks, while CNNs process visual data from cameras to confirm fire presence and assess intensity, minimizing false alarms and enhancing reliability."
+            },
+            {
+              "title": "Intelligent Localization and Suppression",
+              "description": "The system uses IR sensors and computer vision to pinpoint the exact location and size of the fire. The adaptive water cannon adjusts its nozzle size and water pressure based on the fire's intensity, ensuring targeted suppression while conserving water and preventing collateral damage, especially in sensitive areas like electrical panels."
+            },
+            {
+              "title": "Centralized Management",
+              "description": "A robust Lab Management System (LMS) provides users with centralized control, real-time monitoring, and access to system logs. The LMS is designed for both cloud and local storage, offering scalability and reliability across a range of environments."
+            }
+          ],
+          "applications": [
+            "Residential Buildings: Ensuring safety in homes with smart, automated detection and suppression.",
+            "Commercial Spaces: Providing advanced fire protection for offices, malls, and other facilities.",
+            "Industrial Facilities: Handling complex safety needs in factories and warehouses.",
+            "Forestry and Outdoor Spaces: Monitoring vast areas prone to wildfires."
+          ],
+          "benefits": [
+            "Enhanced Safety: Rapid detection and response ensure minimal damage and reduced risk to life.",
+            "Cost Efficiency: Optimized suppression techniques conserve resources while effectively extinguishing fires.",
+            "Scalability: Modular design supports seamless integration into existing safety systems.",
+            "Redundancy and Reliability: Operates on both AC power and battery backups, guaranteeing functionality during outages."
+          ],
+          "mission": "At Xyronix Labs, we are proud to deliver this innovative product, aligning with our mission to provide intelligent, reliable, and scalable solutions for a safer future."
+        }
       },
       {
-        "id": "technology",
-        "title": "Technology",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tempor lorem, vel convallis neque."
-      },
+        "technologyUsed": {
+          "id": "technology",
+          "title": "Technology Used",
+          "description": "Our Fire Early Warning and Detection System leverages state-of-the-art technologies to provide unparalleled safety and precision. This solution integrates advancements in artificial intelligence, IoT, and hardware engineering to revolutionize fire safety systems.",
+          "technologies": [
+            {
+              "name": "Artificial Intelligence",
+              "details": [
+                "RNNs (Recurrent Neural Networks): Analyze sequential sensor data to identify patterns indicative of fire risks.",
+                "CNNs (Convolutional Neural Networks): Process visual data from cameras to confirm the presence of fire and assess intensity, ensuring precision and reducing false alarms."
+              ]
+            },
+            {
+              "name": "IoT Architecture",
+              "details": [
+                "Hierarchical ESP32 Microcontrollers: Facilitate real-time data transmission and communication between multiple sensors and actuators.",
+                "Integrated Sensors: Smoke, temperature, flame, and camera modules are networked to provide continuous monitoring and immediate alerts."
+              ]
+            },
+            {
+              "name": "Advanced Hardware Engineering",
+              "details": [
+                "2-Axis Water Cannon: Guided by computer vision and IR sensors, it delivers targeted suppression with adjustable nozzle sizes and water pressure.",
+                "Energy Redundancy: Supports dual power modes (battery and AC) for uninterrupted operation even during power outages."
+              ]
+            },
+            {
+              "name": "Lab Management System (LMS)",
+              "details": [
+                "Cloud and Local Storage: Enables centralized monitoring, access to system logs, and data storage for real-time analysis and AI training.",
+                "User-Friendly Interface: Provides comprehensive dashboards for controlling, configuring, and tracking system performance."
+              ]
+            }
+          ],
+          "impact": "By integrating these technologies, Xyronix Labs ensures precision, reliability, and scalability, making this system adaptable for diverse environments and safety needs."
+        }
+      },      
       {
         "id": "fire-warning-system",
         "title": "What is Fire Early Warning System?",
