@@ -1,0 +1,1 @@
+import{j as e}from"./index-DuBDSCQ2.js";const o=()=>e.jsxs("div",{className:"container mx-auto p-4",children:[e.jsx("h1",{className:"text-4xl font-bold mb-4",children:"Welcome to Xyronix Labs"}),e.jsx("p",{className:"text-lg",children:"Innovative technology solutions for the future."})]});export{o as default};

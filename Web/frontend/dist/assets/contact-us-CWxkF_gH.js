@@ -1,0 +1,1 @@
+import{j as t}from"./index-DuBDSCQ2.js";const o=()=>t.jsxs("div",{className:"container mx-auto p-4",children:[t.jsx("h1",{className:"text-4xl font-bold mb-4",children:"Welcome to Xyronix Labs"}),t.jsx("p",{className:"text-lg",children:"Innovative technology solutions for the future."})]});export{o as default};
