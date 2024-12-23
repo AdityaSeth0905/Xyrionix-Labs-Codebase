@@ -1,0 +1,52 @@
+TQDM
+Rich
+Pathlib
+Pydantic
+Schedule
+pymongo[srv]
+python-dotenv
+
+# Web framework
+Django
+djangorestframework
+django-channels
+
+# Database support
+#pymongo[srv]>=4.7.0  # MongoDB support
+psycopg2-binary  # PostgreSQL for production
+redis  # Caching and task queuing
+
+# Task scheduling
+celery
+
+# API communication and real-time support
+channels-redis
+daphne
+
+# Development tools
+python-dotenv
+rich
+pydantic
+
+# Testing and debugging
+pytest
+pytest-django
+pytest-asyncio
+coverage
+
+# Deployment
+gunicorn  # WSGI HTTP Server
+uvicorn[standard]  # ASGI HTTP Server for real-time
+
+# Additional utilities
+httpx  # Async HTTP client
+fastapi 
+ruff
+motor
+
+# Additional framework requirements
+django-redis
+djangorestframework-simplejwt
+django-guardian
+elasticsearch
+logstash
