@@ -1,10 +1,10 @@
-import express from 'express';
+import express, { Request, Response, Application } from 'express';
 import cors from 'cors';
 import path from 'path';
 import { config } from './config';
 import helmet from 'helmet';
 
-const app = express();
+const app: Application = express();
 
 app.use(helmet());
 
@@ -13,17 +13,17 @@ const CORS_ORIGINS = [
   'http://localhost:3000',
   process.env.CORS_ORIGIN,
   process.env.RENDER_EXTERNAL_URL,
-  process.env.RENDER_SERVICE_NAME 
-    ? `https://${process.env.RENDER_SERVICE_NAME}.onrender.com` 
+  process.env.RENDER_SERVICE_NAME
+    ? `https://${process.env.RENDER_SERVICE_NAME}.onrender.com`
     : ''
-].filter((origin): origin is string => 
-  origin !== undefined && origin.trim() !== ''
-);
+].filter((origin): origin is string => origin !== undefined && origin.trim() !== '');
 
-app.use(cors({
-  origin: CORS_ORIGINS.length > 0 ? CORS_ORIGINS : '*',
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: CORS_ORIGINS.length > 0 ? CORS_ORIGINS : '*',
+    credentials: true
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -39,15 +39,15 @@ try {
 }
 
 // Health check route
-app.get('/api/health', (_req, res) => {
-  res.status(200).json({ 
-    status: 'healthy', 
-    environment: config.environment 
+app.get('/api/health', (_req: Request, res: Response) => {
+  res.status(200).json({
+    status: 'healthy',
+    environment: config.environment
   });
 });
 
 // Catch-all route with error handling
-app.get('*', (_req, res) => {
+app.get('*', (_req: Request, res: Response) => {
   try {
     res.sendFile(path.join(clientBuildPath, 'index.html'));
   } catch (error) {
