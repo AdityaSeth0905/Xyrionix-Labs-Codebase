@@ -1,16 +1,16 @@
-# Xyrionix Labs Codebase
+# Xyronix Labs Codebase
 
-Welcome to the **Xyrionix Labs Codebase** repository. This repository serves as the centralized hub for developing and deploying all projects and products by **Xyrionix Labs**, a technology-driven company dedicated to advancing innovation in AI, IoT, Robotics, and Data Science.
+Welcome to the **Xyronix Labs Codebase** repository. This repository serves as the centralized hub for developing and deploying all projects and products by **Xyronix Labs**, a technology-driven company dedicated to advancing innovation in AI, IoT, Robotics, and Data Science.
 
-## About Xyrionix Labs
+## About Xyronix Labs
 
-Xyrionix Labs is committed to shaping the future through cutting-edge advancements in artificial intelligence, IoT, robotics, and data science. Our mission is to provide scalable, reliable, and innovative solutions that bridge the gap between technology and real-world applications. Guided by our motto, **"Future is Here"**, we aim to lead the way in harnessing the power of technology for a smarter and safer tomorrow.
+Xyronix Labs is committed to shaping the future through cutting-edge advancements in artificial intelligence, IoT, robotics, and data science. Our mission is to provide scalable, reliable, and innovative solutions that bridge the gap between technology and real-world applications. Guided by our motto, **"Future is Here"**, we aim to lead the way in harnessing the power of technology for a smarter and safer tomorrow.
 
 ---
 
 ## Our First Product: Fire Early Warning and Detection System
 
-The **Fire Early Warning and Detection System** is Xyrionix Labs' flagship product. It represents an advanced AI-powered solution designed for early fire detection, precise localization, and rapid suppression.
+The **Fire Early Warning and Detection System** is Xyronix Labs' flagship product. It represents an advanced AI-powered solution designed for early fire detection, precise localization, and rapid suppression.
 
 ### Key Features
 
@@ -45,15 +45,15 @@ We welcome contributions from the community. If you want to contribute:
 
 ## Contact Us
 
-For more information, visit our website: [Xyrionix Labs](https://www.xyronixlabs.com)
+For more information, visit our website: [Xyronix Labs](https://www.xyronixlabs.com)
 
 ### Social Media
 
 - Instagram: [@xyronixlabs](https://www.instagram.com/xyronixlabs)
-- Twitter: [@XyrionixLabs](https://twitter.com/XyrionixLabs)
-- LinkedIn: [Xyrionix Labs](https://www.linkedin.com/company/xyronixlabs)
+- Twitter: [@XyronixLabs](https://twitter.com/XyronixLabs)
+- LinkedIn: [Xyronix Labs](https://www.linkedin.com/company/xyronixlabs)
 
 ---
 
-**"Future is Here" - Xyrionix Labs**
+**"Future is Here" - Xyronix Labs**
 
